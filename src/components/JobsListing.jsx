@@ -180,10 +180,21 @@ const JobsListing = () => {
 		setFilters(newFilters)
 	}
 
+	const compareFilter = (arr, f) => {
+		if(arr.length >= f.length){
+			let x = 0
+			f.forEach(i => {
+				if(arr.includes(i))
+					x++
+			})
+			return x === f.length
+		}
+		return false
+	}
+
 	useEffect(() => {
-		const filteredData = dataJson.filter(a => [...a.languages, ...a.tools].some(b => filters.includes(b)))
-		console.log(filteredData)
-		if(filteredData.length > 0)
+		const filteredData = dataJson.filter(a => compareFilter([...a.languages, ...a.tools], filters))
+		if(filteredData.length > 0 || filters.length>0)
 			setJobs(filteredData)
 		else
 			getJobs(dataJson)
@@ -193,7 +204,7 @@ const JobsListing = () => {
 		<>
 			{filters.length > 0 && <JobsFilter filters={filters} removeItem={removeItem}/>}
 			<div className="JobsListing">
-				{ jobs.map(item => (<JobItem key={item.id} {...item} handleFilter={handleFilter}/>)) }
+				{ jobs.length > 0 ? jobs.map(item => (<JobItem key={item.id} {...item} handleFilter={handleFilter}/>)) : <p>No results</p>}
 			</div>
 		</>
 

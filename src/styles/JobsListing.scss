@@ -3,10 +3,15 @@
 .JobsListing {
   display: grid;
   grid-row-gap: 60px;
-  //width: max-content;
+  width: 100%;
   margin: 0 auto;
 
   @include large {
     grid-row-gap: 30px;
+    width: 100%;
+  }
+
+  @include medium {
+    width: 100%;
   }
 }
