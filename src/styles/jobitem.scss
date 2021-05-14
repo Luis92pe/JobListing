@@ -1,20 +1,4 @@
-@mixin small {
-  @media only screen and (min-width: 600px) {
-    @content;
-  }
-}
-
-@mixin medium {
-  @media only screen and (min-width: 1024px) {
-    @content;
-  }
-}
-
-@mixin large {
-  @media only screen and (min-width: 1440px) {
-    @content;
-  }
-}
+@import "mixins";
 
 $cyan: hsl(180, 29%, 50%);
 $black: hsl(180, 14%, 20%);
@@ -25,6 +9,8 @@ $gray: hsl(180, 31%, 95%);
   background-color: white;
   border-radius: 6px;
   border: 0px solid;
+  width: 90%;
+  margin: 0 auto;
 
   &:hover {
     border-left-width: 6px;
@@ -32,8 +18,8 @@ $gray: hsl(180, 31%, 95%);
   }
 
   .JobItem-container {
-    padding: 16px 27px;
     position: relative;
+    padding: 0px;
 
     @include large {
       display: flex;
@@ -43,7 +29,7 @@ $gray: hsl(180, 31%, 95%);
 
     .JobItem-brand{
       position: absolute;
-      top: -50px;
+      top: -42px;
       left: -17px;
 
       @include large {
@@ -51,7 +37,7 @@ $gray: hsl(180, 31%, 95%);
       }
 
       img {
-        width: 60px;
+        width: 50px;
 
         @include large {
           width: 110px;
@@ -101,6 +87,8 @@ $gray: hsl(180, 31%, 95%);
 
         .JobItem-title{
           color: $black;
+
+          margin: initial;
 
           h3 {
             margin: 0;
@@ -168,4 +156,8 @@ $gray: hsl(180, 31%, 95%);
 
     }
   }
+}
+
+.JobItem-content{
+  padding: 25px;
 }
