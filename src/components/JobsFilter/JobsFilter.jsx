@@ -1,5 +1,3 @@
-import './JobsFilter.scss'
-
 const JobsFilter = ({filters, removeItem}) => {
 return (
 <div className="JobsFilter">
@@ -9,11 +7,11 @@ return (
 			{filters.map(item =>
 				<div className="JobsFilter-item">
 					<p>{item}</p>
-					<span onClick={() => removeItem(item)}>X</span>
+					<span onClick={() => removeItem(item)}><i className='fas fa-times'></i></span>
 				</div>
 			)}
 		</div>
-		<span className="close"> Clear </span>
+		<span className="close" onClick={() => removeItem('')}> Clear </span>
 	</div>
 </div>
 )

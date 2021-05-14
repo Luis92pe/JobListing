@@ -1,5 +1,3 @@
-import '../styles/jobitem.scss'
-
 const JobItem = ({company, contract, featured, languages, level, location, logo, new: isNew, position, postedAt, role, tools, handleFilter}) => {
 	return (
 		<div className="JobItem">

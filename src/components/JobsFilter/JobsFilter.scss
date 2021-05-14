@@ -1,9 +1,3 @@
-@import "../../styles/mixins";
-
-$cyan: hsl(180, 29%, 50%);
-$black: hsl(180, 14%, 20%);
-$gray: hsl(180, 31%, 95%);
-
 .JobsFilter {
   box-shadow: 0px 6px 80px -29px #5ba4a4;
   background-color: white;
@@ -20,12 +14,8 @@ $gray: hsl(180, 31%, 95%);
     position: relative;
     display: flex;
     align-items: center;
+    justify-content: space-between;
 
-    @include large {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
 
     .JobsFilter-filters {
       display: flex;
@@ -40,9 +30,20 @@ $gray: hsl(180, 31%, 95%);
         background-color: hsl(180, 31%, 95%);
         color: $cyan;
         margin-right: 17px;
-        margin-top: 17px;
+        margin-top: 8px;
+        margin-bottom: 8px;
         border-radius: 6px;
         height: fit-content;
+
+        @include large {
+          margin-top: 0px;
+          margin-bottom: 0px;
+        }
+
+        @include medium {
+          margin-top: 0px;
+          margin-bottom: 0px;
+        }
 
         p {
           margin: 0px;
@@ -56,6 +57,18 @@ $gray: hsl(180, 31%, 95%);
           border-radius: 0px 6px 6px 0px;
           cursor: pointer;
         }
+      }
+    }
+
+    .close {
+
+      margin-top: 8px;
+      margin-bottom: 8px;
+
+      &:hover {
+        text-decoration: underline;
+        color: $cyan;
+        cursor: pointer;
       }
     }
   }

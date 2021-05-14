@@ -1,22 +1,10 @@
-$cyan: hsl(180, 29%, 50%);
+@import "./styles/mixins";
+@import "./styles/variables";
 
-@mixin small {
-  @media only screen and (min-width: 600px) {
-    @content;
-  }
-}
+@import "./styles/JobsListing";
+@import "./styles/jobitem";
+@import "./components/JobsFilter/JobsFilter";
 
-@mixin medium {
-  @media only screen and (min-width: 1024px) {
-    @content;
-  }
-}
-
-@mixin large {
-  @media only screen and (min-width: 1440px) {
-    @content;
-  }
-}
 
 .App {
   display: grid;
