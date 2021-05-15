@@ -4,6 +4,10 @@
   width: 100%;
   margin: 0 auto;
 
+  &.with-filter {
+    margin-top: 126px;
+  }
+
   @include large {
     grid-row-gap: 30px;
     width: 100%;

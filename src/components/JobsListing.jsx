@@ -54,7 +54,7 @@ const JobsListing = () => {
 	return (
 		<>
 			{filters.length > 0 && <JobsFilter filters={filters} removeItem={removeItem}/>}
-			<div className="JobsListing">
+			<div className={`JobsListing ${filters.length > 0 ? '' : 'with-filter'}`}>
 				{ jobs.length > 0 ? jobs.map(item => (<JobItem key={item.id} {...item} handleFilter={handleFilter}/>)) : <p>No results</p>}
 			</div>
 		</>
