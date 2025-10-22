@@ -1,0 +1,77 @@
+.JobsFilter {
+  box-shadow: 0px 6px 80px -29px #5ba4a4;
+  background-color: white;
+  border-radius: 6px;
+  border: 0px solid;
+  width: 90%;
+  margin: 0 auto;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+
+  .JobsFilter-container {
+    padding: 16px 27px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+
+    .JobsFilter-filters {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+
+      .JobsFilter-item {
+        display: flex;
+        align-items: center;
+
+
+        background-color: hsl(180, 31%, 95%);
+        color: $cyan;
+        margin-right: 17px;
+        margin-top: 8px;
+        margin-bottom: 8px;
+        border-radius: 6px;
+        height: fit-content;
+
+        @include large {
+          margin-top: 0px;
+          margin-bottom: 0px;
+        }
+
+        @include medium {
+          margin-top: 0px;
+          margin-bottom: 0px;
+        }
+
+        p {
+          margin: 0px;
+          padding: 8px;
+        }
+
+        span {
+          background-color: $cyan;
+          color: white;
+          padding: 8px;
+          border-radius: 0px 6px 6px 0px;
+          cursor: pointer;
+        }
+      }
+    }
+
+    .close {
+
+      margin-top: 8px;
+      margin-bottom: 8px;
+
+      &:hover {
+        text-decoration: underline;
+        color: $cyan;
+        cursor: pointer;
+      }
+    }
+  }
+
+
+}

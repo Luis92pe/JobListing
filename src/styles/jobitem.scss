@@ -1,0 +1,157 @@
+.JobItem {
+  box-shadow: 0px 6px 80px -29px #5ba4a4;
+  background-color: white;
+  border-radius: 6px;
+  border: 0px solid;
+  width: 90%;
+  margin: 0 auto;
+
+  &:hover {
+    border-left-width: 6px;
+    border-color: $cyan;
+  }
+
+  .JobItem-container {
+    position: relative;
+    padding: 0px;
+
+    @include large {
+      display: flex;
+      align-items: center;
+
+    }
+
+    .JobItem-brand{
+      position: absolute;
+      top: -42px;
+      left: -17px;
+
+      @include large {
+        position: initial;
+      }
+
+      img {
+        width: 50px;
+
+        @include large {
+          width: 110px;
+        }
+
+      }
+    }
+    .JobItem-content{
+
+      @include large {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+      }
+
+      .JobItem-body{
+        .JobItem-header{
+          color: $cyan;
+          display: flex;
+          align-items: center;
+
+          h3 {
+            margin-right: 20px;
+            font-size: 14px;
+          }
+
+          span {
+            color: white;
+            padding: 11px 10px;
+            height: 5px;
+            border-radius: 30px;
+            margin-right: 10px;
+            text-transform: uppercase;
+            font-size: 11px;
+            font-weight: bold;
+            line-height: 7.5px;
+            &.new {
+              background-color: $cyan;
+            }
+
+            &.featured {
+              background-color: $black;
+            }
+
+          }
+        }
+
+        .JobItem-title{
+          color: $black;
+
+          margin: initial;
+
+          h3 {
+            margin: 0;
+
+            &:hover {
+              color: $cyan;
+              cursor: pointer;
+            }
+          }
+        }
+
+        .JobItem-description{
+          width: max-content;
+          ul{
+            display: flex;
+            color:#9ea2a3;
+            justify-content: space-around;
+            padding: 0;
+            :first-child {
+              list-style: none;
+            }
+
+            li {
+              margin-right: 26px;
+              list-style: disc;
+            }
+          }
+        }
+      }
+      .JobItem-tags{
+        display: flex;
+        flex-wrap: wrap;
+
+        // mobile
+        margin-top: 17px;
+        border: 0px solid;
+        border-top-width: 1px;
+        border-color: #bfc1c0;
+
+        @include large {
+          border-top-width: 0px;
+        }
+
+        span {
+          background-color: hsl(180, 31%, 95%);
+          color: $cyan;
+          padding: 8px;
+          margin-right: 17px;
+          margin-top: 17px;
+          border-radius: 6px;
+          height: fit-content;
+
+          &:hover {
+            background-color: $cyan;
+            color: white;
+            cursor: pointer;
+          }
+
+          @include large {
+            font-size: 13px;
+          }
+        }
+
+      }
+
+    }
+  }
+}
+
+.JobItem-content{
+  padding: 25px;
+}
